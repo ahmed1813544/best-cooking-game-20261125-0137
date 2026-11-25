@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Golden Ladle — Sizzle &amp; Serve</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="stage">
+  <header id="topbar">
+    <div class="brand">🍳 The Golden Ladle</div>
+    <div class="shift"><span class="label">SHIFT</span><span id="timer">2:30</span></div>
+    <div class="stat">🪙 <span id="coins">0</span></div>
+    <div class="stat">⭐ <span id="score">0</span></div>
+    <div class="stat">🔥 <span id="combo">x0</span></div>
+    <button id="muteBtn" class="icon-btn" title="Mute (M)">🔊</button>
+    <button id="pauseBtn" class="icon-btn" title="Pause (P)">⏸</button>
+  </header>
+
+  <section id="orderBoard">
+    <div class="board-title">📋 ORDER BOARD</div>
+    <div id="tickets"></div>
+  </section>
+
+  <main id="kitchen">
+    <section class="stations">
+      <div class="station" id="grillStation">
+        <div class="station-title">🔥 GRILL</div>
+        <div id="grillSlots"></div>
+        <div class="station-hint">Patty cooks 6s — click it when READY</div>
+      </div>
+      <div class="station" id="boardStation">
+        <div class="station-title">🔪 CHOPPING BOARD</div>
+        <div id="chopBoard"></div>
+        <div class="station-hint">Click the board 3 times to chop</div>
+      </div>
+    </section>
+
+    <section class="plate-area">
+      <div class="plate-title">🍽️ YOUR PLATE</div>
+      <div id="plate"></div>
+      <div id="plateDish"></div>
+      <div class="plate-actions">
+        <button id="serveBtn">SERVE ➜</button>
+        <button id="trashBtn">🗑 Trash</button>
+      </div>
+    </section>
+
+    <aside class="menu" id="menu">
+      <div class="menu-title">📖 MENU</div>
+      <div id="menuList"></div>
+      <div class="menu-note">Serve fast for a patience bonus. Chain serves for combo tips!</div>
+    </aside>
+  </main>
+
+  <footer id="counter">
+    <div class="counter-title">🧺 INGREDIENT COUNTER — click a bin or press 1–6</div>
+    <div id="bins"></div>
+  </footer>
+
+  <div id="hintBar">Keys: 1–6 ingredients · C chop · G take from grill · Space serve · T trash · P pause · M mute</div>
+  <div id="toast"></div>
+
+  <div id="titleScreen" class="overlay">
+    <div class="panel">
+      <div class="panel-emoji">🍳</div>
+      <h1>The Golden Ladle</h1>
+      <h2>Sizzle &amp; Serve</h2>
+      <p class="tagline">Run the lunch rush at your own little bistro. Take orders, chop, grill and serve before patience runs out!</p>
+      <div class="howto">
+        <div>🧺 <b>Click</b> an ingredient bin — or press <b>1–6</b></div>
+        <div>🔪 Veg goes to the board — <b>click 3 times</b> to chop</div>
+        <div>🔥 Patties go to the grill — take them when <b>READY</b>, before they burn</div>
+        <div>🍽️ Match an order ticket exactly, then hit <b>SERVE</b></div>
+      </div>
+      <button id="startBtn" class="big-btn">▶ Start the shift</button>
+      <p class="fine">A 2½-minute shift. Earn 30 coins for one star, 55 for two, 90 for three.</p>
+    </div>
+  </div>
+
+  <div id="gameOverScreen" class="overlay hidden">
+    <div class="panel">
+      <div class="panel-emoji">🏁</div>
+      <h1>Shift over!</h1>
+      <div id="finalStars" class="stars">⭐⭐⭐</div>
+      <div class="results">
+        <div>🪙 Coins earned: <b id="finalCoins">0</b></div>
+        <div>🍽️ Dishes served: <b id="finalServed">0</b></div>
+        <div>🚶 Orders walked out: <b id="finalMissed">0</b></div>
+        <div>🔥 Best combo: <b id="finalBestCombo">0</b></div>
+        <div>⭐ Score: <b id="finalScore">0</b></div>
+      </div>
+      <button id="againBtn" class="big-btn">↻ Cook another shift</button>
+    </div>
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
